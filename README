@@ -1,0 +1,67 @@
+Tankhunt version 0.0.0
+----------------------
+This is tankhunt, a game conceived of by Ray Jones and written by Ray
+Jones and Michael Moore.  (rjones@dsd.es.com, mmoore@dsd.es.com)
+
+The idea of the game is not to die.  Beyond that, it's up to you.  The
+code has been kept simple on purpose, with the intent that people will
+modify and add to the code.  The game now is primarily a "shoot-em-up"
+game, with very little strategy, but it could be changed to be almost
+anything (Steal the Flag, Ultimate Frisbee, Soccer, Football... Hide
+and Seek or Kick the Can, even.)
+
+It's based on several other games out there, but primarily it tried to
+copy Bolo for the Apple II.  It also has elements of Xtank, Netrek,
+and Hunt.  It is probably most like Xtank, but is not meant as a
+replacement or competitor with it.
+
+Tankhunt uses UDP sockets for communication.  This allows the server
+to only open one port, and all the input from the clients is received
+on this port, and sorted out by address and port of where the packet
+originated.  
+
+The code for the server is fast and simple (I hope).  From comparison
+with Netrek, it should be able to run in excess of 100 players without
+CPU slowdown.  I'm not sure how it compares Net-wise, though.  The
+packets are small, so the network load should be a minimum.
+
+To play a game:
+Start the server on a machine.
+Players can then connect at any time.
+
+On server:
+tank% tankhunt.server
+
+On another machine:
+other% tankhunt.client -server tank
+
+See server/README and client/README for more information.
+
+COPYRIGHT and OTHER INFO
+------------------------
+There is no copyright on this source.  If you can make money of off
+it, do so.  If you make a lot of money off of it, please send us some.
+Please don't try and keep other people from doing the same, though.
+
+This game is not meant to be a game so much as something to make a
+game out of.  You might have noticed three release numbers above.  The
+first is a tree number, the second a release number, and the last a
+patchlevel.  If you want to change or enhance the game in some way,
+and plan to release your changes to the world, please mail me 
+(rjones@dsd.es.com).  I will let you know what tree number you should
+use.  The idea is to keep releases self-compatible and easily
+distinguished from each other while still making it easy to change and
+add to the game.
+
+Of course, it's possible no one will want to add to the game.  That's
+okay, it's still a pretty fun game as it is.  Best if played in a room
+where you can yell at other players, since there is no support for a
+message system (yet).  
+
+If you like this game, let us know.  Especially if you make any cool
+additions to it.
+
+Ray Jones
+rjones@dsd.es.com
+Michael Moore
+mmoore@dsd.es.com

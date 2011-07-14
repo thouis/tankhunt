@@ -1,0 +1,11 @@
+This is the README for the tankhunt server.
+-------------------------------------------
+Usage:
+tankhunt.server [-port port] [-density 0-100] [-size <size of arena>]
+
+port:    which port to listen on for connections (3333 by default)
+density: how "dense" the maze should be.  0 means no walls at all.
+          100 means there are no cycles in the maze (every point in
+          the maze will be connected, though).
+size:    how large to make the maze on a side.  The maze will be
+          square, and the boundaries wrap around.

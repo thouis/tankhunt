@@ -1,0 +1,59 @@
+This is the README for the tankhunt client.
+-------------------------------------------
+Usage:    
+tankhunt.client [-display display] [-server server] [-port port] [-name name]
+
+display: where to display the client
+server:  the machine the server is running on
+port:    the port the server is listening to for connections on its machine
+          (defaults to 3333)
+name:    the 3 letter name you want displayed below your tank in the game
+          (defaults to "non" for "noname")
+
+The client will build bitmaps for each of the possible 256 rotations
+of the tanks.  There will be some delay as it builds these and before
+it contacts the server.
+
+
+Controls
+--------
+Mouse controls:
+Left mouse button:   Fire in the direction your tank is facing
+Middle mouse button: Fire in the direction your tank is facing, then
+                      turn towards the mouse
+Left mouse button:   Turn towards the mouse
+
+Keyboard controls:
+0-9        : set your speed (server only supports speed of 8 by default)
+)!@#$%^&*( : set your speed to the negative of the unshifted value of the key
+              (ie. '%' = -5)
+<          : set your speed to one speed slower
+>          : set your speed to one speed higher
+f          : same as left button
+b          : same as middle button
+k          : same as right button
+
+
+Keymap
+------
+It is possible to make the client use a keymap stored in the
+environment variable TANK_HUNT_MAP.  The format is character you want
+to hit followed by action you want it to take from the table above.
+
+For example:
+
+tank% setenv TANK_HUNT_MAP ' 8e*'
+
+maps space to '8' and 'e' to '*' ( negative 8)
+
+
+How to play the game
+--------------------
+How the game is played will vary from server to server as improvements
+and changes are made.  
+
+In short: Kill or be killed.  You can only fire the way your tank is
+facing.  Don't run into anything (tanks, walls, bullets, explosions).
+Bullets are only stopped by walls, so don't fire straight down
+infinite corridors.  Keep your arms and legs inside the tank at all
+times.  Do not stand up.  Have fun.

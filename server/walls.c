@@ -2,6 +2,8 @@
 
 #include <stdio.h>
 #include <sys/types.h>
+#include <stdlib.h>
+#include <string.h>
 
 #include "defs.h"
 #include "data.h"

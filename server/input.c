@@ -7,6 +7,8 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <errno.h>
+#include <stdlib.h>
+#include <strings.h>
 
 #include "defs.h"
 #include "data.h"
@@ -15,7 +17,7 @@
 #include "sintab.h"
 
 /*
- * place a player in the arena.  check to mkae sure he doesn't appear 
+ * place a player in the arena.  check to make sure they don't appear 
  * on anyone else
  */
 void

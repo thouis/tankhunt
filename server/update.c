@@ -4,6 +4,8 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <stdlib.h>
+#include <string.h>
 
 #include "defs.h"
 #include "struct.h"
@@ -339,7 +341,7 @@ void
 	update_clients();
 }
 
-/* explode a tank, checking that he's not already exploding */
+/* explode a tank, checking that it's not already exploding */
 static void
     explode(p)
 struct player *p;
@@ -458,7 +460,7 @@ static void
 	
 	/* walls */
 	if (fetch_wall_data(p->x / BOX_SIZE, p->y / BOX_SIZE,
-			    ph->rel_x, ph->rel_y,
+			    p->x % BOX_SIZE, p->y % BOX_SIZE,
 			    5, ph->walls))
 	    explode(p);
 
@@ -545,7 +547,7 @@ static void
 	ph->num_explosions = htonl(ph->num_explosions);
 
 	/* send it to the client */
-	if (sendto(port_fd, buf, packet_size, NULL,
+	if (sendto(port_fd, buf, packet_size, 0,
 		   (struct sockaddr *) &(p->client_addr),
 		   sizeof (struct sockaddr_in)) != 
 	    packet_size)
